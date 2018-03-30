@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Interactive Classroom Tool</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Interactive Classroom Tool</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav nav-tabs navbar-right">
+
+        <li class="active"><a data-toggle="tab" href="#dashboard" >Dashboard</a></li>
+        <li><a data-toggle="tab" href="#poll">Poll</a></li>
+        <li><a data-toggle="tab" href="#results">Poll Results</a></li>
+        <li><a data-toggle="tab" href="#AQA">AQA</a></li>
+        <li><a data-toggle="tab" href="#logout">Sign Out</a></li> 
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="tab-content">
+<!-- First Container - Dashboard -->
+<div class="container-fluid main-container text-center tab-pane fade in active" id="dashboard">
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+      <h1 class="margin">Interactive Classroom Tool</h1>
+    <h3 class="margin">"ICT is an interactive classroom tool which will improve participation, concentration levels and help gauge levels of understanding by providing an enjoyable experience for both Students and Teachers."</h3>
+    <h3> - Newry Democrat</h3>
+    <br><br>
+          </div>
+    <div class="col-sm-2"></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+            <img src="./imgs/Services/poll.png" alt="pollAvatar" class="avatar">
+            <p class="lead"> Polling</p>
+            <p class="info">Engage your audience by providing real-time polling to energise your classroom.</p>
+    </div>
+    <div class="col-sm-4">
+      <img src="./imgs/Services/question.png" alt="aqaAvatar" class="avatar">
+            <p class="lead">Ask Questions Annomyously</p>
+            <p class="info">Provide 100% participation by giving every student the oppurtinity to ask questions.</p>
+    </div>
+    <div class="col-sm-4">
+      <img src="./imgs/Services/feedback.png" alt="feedbackAvatar" class="avatar">
+            <p class="lead">Feedback</p>
+            <p class="info">Able to view personal and class results. </p>
+    </div>
+  </div>
+</div>
+
+
+<!-- Second Container = Creating Poll -->
+<div class="container-fluid main-container text-center tab-pane fade" id="poll">
+  <h2>Polling Section</h3>
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+      <div class="form-group">
+            <label
+              <b> Poll Title: </b>
+            </label>
+            <input type="text" placeholder="Enter title..." name="pollTitle" class="pollTitle">
+       </div>
+        <div class="form-group">
+          <div class="container-numberOf">
+            <label>
+              <b> Number of Quesitons: </b>
+            </label>
+            <input type="text" placeholder="" name="numberOfQuestions" class="numberOf">
+              </div>
+              <b> Number of Students: </b>
+            </label>
+            <input type="text" placeholder="" name="numberOfStudents" class="numberOf">
+        </div>
+
+
+      <div class="form-group">
+            <label
+              <b> Enter Question: </b>
+            </label>
+            <input type="text" placeholder="Question..." name="enterQuestions" class="enterQuestion">
+            <button type="button" class="addQuestion">
+              <span class="glyphicon glyphicon-plus">
+              </span>
+            </button>
+            <button type="button" class="arrows">
+              <span class="glyphicon glyphicon-arrow-up">
+              </span>
+            </button>
+            <button type="button" class="arrows">
+              <span class="glyphicon glyphicon-arrow-down">
+              </span>
+            </button>
+            <div class="container-answer">
+            <input type="text" placeholder="Answer 1..." name="answer1" class="answer">
+          </div>
+          <div class="container-answer">
+            <input type="text" placeholder="Answer 2..." name="answer2" class="answer">
+        </div>
+        <div class="container-answer">
+            <input type="text" placeholder="Answer 3..." name="answer3" class="answer">
+          </div>        
+      </div>
+      <div class="createPoll">
+          <button type="button" class="createPollButton">Create Poll</button>
+      </div>
+
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+</div>
+
+<!-- Third Container = Poll Results -->
+<div class="container tab-pane fade in" id="results">
+    <h1>Real Time vote </h1>
+    <p>Who do you support?</p>
+      <form id="voteForm">
+        <p>
+          <input type="radio" name="answer" id="liverpool" value="Liverpool">
+          <label for="liverpool">Liverpool</label>
+        </p>
+        <p>
+          <input type="radio" name="answer" id="chelsea" value="Chelsea">
+          <label for="chelsea">Chelsea</label>
+        </p>
+        <p>
+          <input type="radio" name="answer" id="spurs" value="Spurs">
+          <label for="spurs">Spurs</label>
+        </p>
+        <input type="submit" name="Vote" class="btn" value="Submit Vote">
+      </form>
+
+      <br><br><br>
+
+      <div id="resultsContainer" style="height: 300px;width:100%"></div> 
+  </div>
+
+<!-- Fourth Container = AQA -->
+<div class="container-fluid main-container text-center tab-pane fade" id="AQA">
+  <br><br>
+  <div class="row form-group">
+        <div class="col-xs-12 col-md-offset-2 col-md-8 col-lg-8 col-lg-offset-2">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <span class="glyphicon glyphicon-comment text-center"></span> Ask Questions Annoymously Section
+                </div>
+                <div class="panel-body body-panel">
+                    <ul class="chat">
+
+                    </ul>
+                </div>
+                <div class="panel-footer clearfix">
+                    <textarea id="message" class="form-control" rows="3"></textarea>
+                    <span class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-xs-12" style="margin-top: 10px">
+                        <button class="btn btn-success btn-lg btn-block" id="btn-chat">Send</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script id="new-message-other" type="text/template">
+    <li class="left clearfix">
+        <span class="chat-img pull-left">
+            <img src="http://placehold.it/50/55C1E7/fff&text=U" alt="User Avatar" class="img-circle" />
+        </span>
+        <div class="chat-body clearfix">
+            <p>
+                {{body}}
+            </p>
+        </div>
+    </li>
+</script>
+
+<script id="new-message" type="text/template">
+    <li id="{{id}}" class="right clearfix">
+        <div class="chat-body clearfix">
+            <p>
+                {{body}}
+            </p>
+        </div>
+    </li>
+</script>
+</div>
+
+<!-- Footer -->
+<footer class="container-footer footer-default text-center">
+
+        <p>&copy; 2018 Ulster University.</p>
+      </footer>
+          <script src="https://js.pusher.com/4.0/pusher.min.js"></script>
+
+<script src="index.js"></script>
+    <script src="main.js"></script>      
+
+
+</body>
+</html>
